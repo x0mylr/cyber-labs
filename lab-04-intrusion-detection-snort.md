@@ -1,5 +1,5 @@
 # Lab 04: Catch the Attacker — Intrusion Detection with Snort
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 > **Status: Coming Soon**
 
@@ -81,5 +81,5 @@ alert icmp any any -> $HOME_NET any (msg:"LAB04: ICMP Ping Flood"; \
 
 ---
 
-*Lab 04 | AI-Enabled Security | Raspberry Pi Lab Series*
+*Lab 04 | Cybersecurity & Networking Essentials | Raspberry Pi Lab Series*
 *Coming Soon — check back or run `git pull` to get new labs*

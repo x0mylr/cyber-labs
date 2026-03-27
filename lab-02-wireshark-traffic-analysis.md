@@ -1,5 +1,5 @@
 # Lab 02: Catching What's on the Wire — Network Traffic Analysis with Wireshark
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 ---
 
@@ -27,6 +27,14 @@ By the end of this lab, you will be able to:
 - [ ] Use `tshark` (the command-line version of Wireshark) to capture and search traffic
 - [ ] Save and re-open a packet capture file for later analysis
 - [ ] Identify indicators that warrant further investigation
+
+---
+
+> **Certification Alignment**
+> Skills in this lab map to the following industry certifications:
+> - **CompTIA Network+ (N10-009):** 1.1 — Explain the OSI model layers and encapsulation concepts · 5.3 — Use the appropriate network troubleshooting methodology and tools (packet capture, protocol analysis)
+> - **CompTIA Security+ (SY0-701):** 4.4 — Use appropriate tools to assess organizational security (traffic analysis, packet capture)
+> - **CompTIA CySA+ (CS0-003):** 2.2 — Analyze data as part of security monitoring activities (network forensics, packet analysis, IOC identification)
 
 ---
 
@@ -892,5 +900,5 @@ Example: dns && ip.src == 192.168.1.42 && !ip.dst == 8.8.8.8
 
 ---
 
-*Lab 02 | AI-Enabled Security | Raspberry Pi Lab Series*
+*Lab 02 | Cybersecurity & Networking Essentials | Raspberry Pi Lab Series*
 *Next Up: Lab 03 — Network Scanning & Reconnaissance with Nmap*

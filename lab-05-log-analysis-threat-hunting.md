@@ -1,5 +1,5 @@
 # Lab 05: Follow the Breadcrumbs — Log Analysis & Threat Hunting
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 > **Status: Coming Soon**
 
@@ -82,5 +82,5 @@ The logs you analyze in this lab are the same logs that forensic investigators u
 
 ---
 
-*Lab 05 | AI-Enabled Security | Raspberry Pi Lab Series*
+*Lab 05 | Cybersecurity & Networking Essentials | Raspberry Pi Lab Series*
 *Coming Soon — check back or run `git pull` to get new labs*

@@ -1,11 +1,11 @@
 # Cyber Labs
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 ---
 
 ## About This Repo
 
-This repository contains hands-on lab documents for the AI-Enabled Security course.
+This repository contains hands-on lab documents for the Cybersecurity & Networking Essentials course.
 Labs are designed for students with little to no prior technical experience.
 Each lab builds on the last — work through them in order.
 

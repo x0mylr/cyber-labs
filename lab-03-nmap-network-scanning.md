@@ -1,5 +1,5 @@
 # Lab 03: Know Your Network — Reconnaissance & Scanning with Nmap
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 > **Status: Coming Soon**
 
@@ -74,5 +74,5 @@ sudo apt install nmap -y
 
 ---
 
-*Lab 03 | AI-Enabled Security | Raspberry Pi Lab Series*
+*Lab 03 | Cybersecurity & Networking Essentials | Raspberry Pi Lab Series*
 *Coming Soon — check back or run `git pull` to get new labs*

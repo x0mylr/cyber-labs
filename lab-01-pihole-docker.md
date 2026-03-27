@@ -1,5 +1,5 @@
 # Lab 01: Build Your Own Network Ad Blocker with Pi-hole & Docker
-### AI-Enabled Security | Raspberry Pi Lab Series
+### Cybersecurity & Networking Essentials | Raspberry Pi Lab Series
 
 ---
 
@@ -22,6 +22,13 @@ By the end of this lab, you will be able to:
 - [ ] Access and navigate the Pi-hole web dashboard
 - [ ] Verify that DNS-level ad blocking is working
 - [ ] Connect a device to use Pi-hole as its DNS server
+
+---
+
+> **Certification Alignment**
+> Skills in this lab map to the following industry certifications:
+> - **CompTIA Network+ (N10-009):** 1.2 — Explain the characteristics of network protocols and services (DNS) · 2.1 — Compare and contrast various devices, their functions, and features (DNS server)
+> - **CompTIA Security+ (SY0-701):** 3.2 — Explain the security implications of proper hardware, software, and data asset management (network-level filtering) · 4.4 — Use appropriate tools to assess organizational security (DNS sinkhole, traffic filtering)
 
 ---
 
@@ -719,5 +726,5 @@ When you hit an error that isn't covered here, use this process:
 
 ---
 
-*Lab 01 | AI-Enabled Security | Raspberry Pi Lab Series*
+*Lab 01 | Cybersecurity & Networking Essentials | Raspberry Pi Lab Series*
 *Next Up: Lab 02 — Network Traffic Analysis with Wireshark in Docker*
