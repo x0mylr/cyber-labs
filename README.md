@@ -1,6 +1,5 @@
-# Co-Lin Cyber Labs
+# Cyber Labs
 ### AI-Enabled Security | Raspberry Pi Lab Series
-**Copiah-Lincoln Community College — Wesson Campus**
 
 ---
 
