@@ -807,6 +807,33 @@ The `/etc/shadow` output contains a password hash starting with `$6$`. Research 
 **Challenge 3 — Patch the Vulnerability**
 After cleanup, recreate only the sudo misconfiguration. Then fix it the right way: research the **principle of least privilege** and rewrite the sudoers rule so `target` can only run one specific Python script — not the Python interpreter itself. Verify that your fix prevents the GTFOBins escalation while still allowing the intended script to run.
 
+**Challenge 4 — Build Your Own Scoring Dashboard**
+The lab you just completed is the engine. Now build the gauges.
+
+Create a second Flask web application — separate from the vulnerable target — that runs on port 5001 and acts as a **live scoring dashboard** for this lab. When students open `http://localhost:5001` they should see a retro terminal-style interface (green text on black background, monospace font) that tracks their progress through all four stages and displays a running point total.
+
+Your dashboard should:
+
+- Display four stages with point values: Recon (25 pts), Initial Access (50 pts), Privilege Escalation (35 pts), System Compromise (40 pts) — 150 points total
+- Provide a way for students to "check off" each stage as they complete it (a button, a form, or a verification endpoint)
+- Update the score in real time without requiring a full page reload (research JavaScript `fetch()` or Flask-SocketIO)
+- Use a retro 90s aesthetic — think green-on-black terminal, monospace font, ASCII-style borders
+
+To get started, create a new directory alongside your lab environment:
+
+```bash
+mkdir -p ~/lab-07-dashboard
+```
+
+Your dashboard will need its own `app.py`, `Dockerfile`, and an entry in your `docker-compose.yml` alongside the existing `webapp` service. When both services are running, students will have:
+
+```
+http://localhost:8080  →  the vulnerable target (attack surface)
+http://localhost:5001  →  the scoring dashboard (progress tracker)
+```
+
+**Stretch goal:** Instead of manual check-offs, make the dashboard automatically detect stage completion by checking real system state — for example, verifying whether the `target` user exists, whether `/root/PROOF.txt` is present, or whether a successful SSH login has occurred. This is how real CTF platforms work.
+
 ---
 
 ## Troubleshooting
