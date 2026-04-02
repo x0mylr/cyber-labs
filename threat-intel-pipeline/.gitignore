@@ -1,0 +1,25 @@
+# Secrets — NEVER commit these
+.env
+*.key
+*.pem
+*.crt
+
+# Database files
+data/
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.mypy_cache/
+
+# Docker
+.docker/

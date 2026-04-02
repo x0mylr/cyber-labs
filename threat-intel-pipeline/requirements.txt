@@ -1,0 +1,23 @@
+# Threat Intelligence Pipeline — Python Dependencies
+#
+# Core: runs on Python 3.10+ (compatible with Raspberry Pi OS Bookworm)
+# Install: pip install -r requirements.txt
+
+# HTTP client
+requests>=2.31.0
+
+# AI analysis agent
+anthropic>=0.40.0
+
+# REST API
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# YAML configuration
+pyyaml>=6.0.1
+
+# Production WSGI server (used in Docker)
+gunicorn>=21.2.0
+
+# Type checking support (optional, dev only)
+# mypy>=1.8.0

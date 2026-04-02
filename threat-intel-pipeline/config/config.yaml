@@ -1,0 +1,119 @@
+# Threat Intelligence Pipeline Configuration
+# ============================================
+# All values can be overridden with environment variables.
+# See pipeline/config.py for the full env var mapping.
+#
+# IMPORTANT: Do NOT commit API keys to this file.
+# Use environment variables or a .env file for secrets.
+
+storage:
+  db_path: "data/threat_intel.db"
+
+scheduler:
+  enabled: true
+  interval_minutes: 60       # How often to collect from feeds
+  report_interval_hours: 6   # How often to generate AI threat briefs
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+
+agent:
+  # Claude model for deep analysis (use opus for best results)
+  model: "claude-opus-4-6"
+  # Faster/cheaper model for triage and correlation
+  fast_model: "claude-haiku-4-5-20251001"
+  # Hours of IoC data to include in threat briefs
+  report_lookback_hours: 24
+  # Minimum confidence score for IoCs included in analysis
+  min_confidence: 50
+
+enrichment:
+  enabled: true
+  # Max IoCs to enrich per collection run (respect free API rate limits)
+  max_per_run: 200
+  # API keys — set via environment variables instead:
+  #   VT_API_KEY   → VirusTotal free tier (1000 req/day)
+  #   NVD_API_KEY  → NIST NVD (50 req/30s with key)
+
+collectors:
+
+  # ── Abuse.ch ThreatFox ──────────────────────────────────────────────
+  # Free, no key required. IoCs with confidence scores.
+  abusech_threatfox:
+    enabled: true
+    lookback_days: 3
+
+  # ── Abuse.ch URLhaus ────────────────────────────────────────────────
+  # Free, no key required. Active malware distribution URLs.
+  abusech_urlhaus:
+    enabled: true
+
+  # ── Abuse.ch MalwareBazaar ──────────────────────────────────────────
+  # Free, no key required. Malware sample hashes.
+  abusech_malwarebazaar:
+    enabled: true
+
+  # ── CISA Known Exploited Vulnerabilities ────────────────────────────
+  # Free, no key required. High-confidence actively exploited CVEs.
+  cisa_kev:
+    enabled: true
+    lookback_days: 30       # Include KEV entries from the last 30 days
+
+  # ── CISA Cybersecurity Alerts ───────────────────────────────────────
+  # Free, no key required. US-CERT advisory RSS feed.
+  cisa_alerts:
+    enabled: true
+    max_items: 20
+
+  # ── Emerging Threats (Proofpoint ET) ────────────────────────────────
+  # Free, no key required. IP reputation and C2 blocklists.
+  emerging_threats:
+    enabled: true
+    feeds:
+      - compromised    # IPs actively attacking
+      - botcc          # Botnet C2 servers
+      - block          # High-confidence firewall block list
+      # - tor          # Uncomment to include Tor exit nodes
+
+  # ── MISP Public OSINT Feeds ─────────────────────────────────────────
+  # Free, no key required. Community-curated threat intelligence.
+  misp_public:
+    enabled: true
+    max_events_per_feed: 10
+    include_all_attributes: false    # true = include non-IoC attributes too
+
+  # ── Private MISP Instance ───────────────────────────────────────────
+  # Requires your organization's MISP URL and API key.
+  # Set via: MISP_URL=https://misp.example.com  MISP_API_KEY=your-key
+  misp_instance:
+    enabled: false
+    base_url: null
+    api_key: null
+    lookback_days: 7
+    limit: 1000
+
+  # ── AlienVault OTX ──────────────────────────────────────────────────
+  # Free API key required: https://otx.alienvault.com/
+  # Set via: OTX_API_KEY=your-key
+  # Auto-enabled when OTX_API_KEY is set.
+  alienvault_otx:
+    enabled: false
+    api_key: null
+    lookback_days: 7
+    max_pulses: 200
+
+  # ── AlienVault OTX Direct (specific high-value pulses) ──────────────
+  alienvault_otx_direct:
+    enabled: false
+    api_key: null
+    pulse_ids: []    # List of specific OTX pulse IDs to always fetch
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s [%(levelname)s] %(name)s — %(message)s"
+  file: null         # Set to "logs/pipeline.log" to write to file
