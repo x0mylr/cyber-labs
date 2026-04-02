@@ -41,6 +41,7 @@ git pull
 | 04 | Catch the Attacker | Snort, Intrusion Detection, IDS Rules, Alert Analysis | 🔜 Coming Soon |
 | 05 | Follow the Breadcrumbs | Log Analysis, Threat Hunting, System Logs, Timeline Reconstruction | 🔜 Coming Soon |
 | 06 | Find the Holes | OpenVAS, Vulnerability Scanning, CVSS, Remediation | 🔜 Coming Soon |
+| 08 | Who Are You? | IAM, Authentication Types, MFA, Password Security, Access Control (DAC/MAC/RBAC/ABAC) | ✅ Available |
 
 ---
 
@@ -58,13 +59,15 @@ Lab 04: Snort           → Detect attacks and suspicious traffic in real time
 Lab 05: Log Analysis    → Investigate what happened after a security event
          ↓
 Lab 06: OpenVAS         → Proactively find weaknesses before an attacker does
+         ↓
+Lab 08: IAM             → Control who gets in and what they are allowed to do
 ```
 
 ---
 
 ## What You Will Need
 
-- Raspberry Pi 4 (any RAM configuration)
+- Raspberry Pi 4 (any RAM configuration) — *Lab 08 also works on Windows, macOS, or any device with a browser*
 - Raspberry Pi OS (64-bit recommended)
 - Internet connection (classroom network)
 - A browser on the Pi desktop
